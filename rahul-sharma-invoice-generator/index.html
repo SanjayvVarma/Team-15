@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/logo.jpg" type="image/x-icon" />
+    <script
+      src="https://kit.fontawesome.com/b0de7f475e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Generate Invoice</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <section class="left">
+        <div class="top">
+          <div class="date">
+            <span>Current date:</span> <span id="current-date"></span><br />
+            <span>Due date:</span> <input type="date" />
+          </div>
+          <div class="invoice-number">
+            <label for="invoice-number"><span>Invoice Number:</span></label>
+            <input id="invoice-number" type="number" value="1" />
+          </div>
+        </div>
+        <hr />
+        <div class="top1">
+          <div>
+            <span id="bill-from"> Bill to </span>
+            <input type="text" placeholder="Who is this invoice to" /><input
+              type="email"
+              placeholder="Email Address"
+            /><input type="text" placeholder="Billing Address" />
+          </div>
+          <div>
+            <span id="bill-to"> Bill from </span>
+            <input type="text" placeholder="Who is this invoice from" /><input
+              type="email"
+              placeholder="Email Address"
+            /><input type="text" placeholder="Billing Address" />
+          </div>
+        </div>
+        <hr />
+        <div class="middle">
+          <table id="detail-table">
+            <tr>
+              <th>ITEM</th>
+              <th>QTY</th>
+              <th>PRICE/RATE</th>
+              <th>ACTION</th>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" placeholder="Item Name" />
+                <input type="text" placeholder="Item Description" />
+              </td>
+              <td><input type="number" value="1" class="quantity" /></td>
+              <td><input type="number" value="1.0" class="price" /></td>
+              <td>
+                <i class="fa-solid fa-trash-can delete-btn"></i>
+              </td>
+            </tr>
+          </table>
+          <button id="add-item" type="button">Add Item</button>
+        </div>
+        <div class="bottom">
+          <div><span>Subtotal:</span> <span id="subtotal">$0</span></div>
+          <div>
+            <span>Discount:</span
+            ><span class="normal">(<span id="dx-per">0</span>%)</span>
+            <span id="discount">$0</span>
+          </div>
+          <div>
+            <span>Tax:</span
+            ><span class="normal">(<span id="tx-per">0</span>%)</span>
+            <span id="tax">$0</span>
+          </div>
+          <hr />
+          <div>
+            <span>Total:</span>
+            <span id="total"></span>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="note">Notes:</div>
+          <textarea
+            name=""
+            id="textarea"
+            placeholder="Thanks for your bussiness!!"
+          ></textarea>
+        </div>
+      </section>
+      <section class="right">
+        <button id="review">Review Invoice</button>
+        <div class="currency">
+          <span>Currency</span>
+          <select id="currency">
+            <option value="$">USD (United States Dollar)</option>
+            <option value="£">GBP (British Pound Sterling)</option>
+            <option value="¥">JPY (Japanese Yen)</option>
+            <option value="$">CAD (Canadian Dollar)</option>
+            <option value="$">AUD (Australian Dollar)</option>
+            <option value="$">SGD (Signapore Dollar)</option>
+            <option value="¥">CNY (Chinese Renminbi)</option>
+            <option value="₿">BTC (Bitcoin)</option>
+          </select>
+        </div>
+        <div class="tax-rate">
+          <span>Tax rate:</span>
+          <div class="tax-percent">
+            <input
+              type="text"
+              id="tax-percent"
+              placeholder="0.0"
+              value="0"
+            /><span class="percent">%</span>
+          </div>
+        </div>
+        <div class="discount">
+          <span>Discount:</span>
+          <div class="discount-percent">
+            <input
+              type="text"
+              id="discount-percent"
+              placeholder="0.0"
+              value="0"
+            /><span class="percent">%</span>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;0,900;1,500&display=swap');
+
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+
+    min-height: 98vh;
+    background-color: #F2F3F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    width: 80%;
+    background-color: antiquewhite;
+}
+
+.left {
+    width: 75%;
+    padding: 30px;
+    background-color: white;
+}
+
+.right {
+    position: sticky;
+    width: 25%;
+    padding: 30px;
+    background: none;
+
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.bottom>div {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.bottom>hr {
+    width: 55%;
+}
+
+span,
+th {
+    font-weight: 600;
+    font-size: .9em;
+}
+
+span.normal {
+    font-weight: 400;
+}
+
+
+#textarea {
+    width: 100%;
+    height: 7dvh;
+}
+
+h1 {
+    font-family: 'poppins';
+    font-weight: 400;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date {
+    font-family: 'poppins';
+    display: inline-block;
+
+}
+
+.invoice-number {
+    display: inline-block;
+}
+
+
+/*mediaQuery*/
+
+@media screen and (max-width:780px) {
+    body {
+        background-color: blue;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        height: 25vh;
+    }
+}
