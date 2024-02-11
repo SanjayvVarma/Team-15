@@ -7,6 +7,7 @@ DomDate.innerHTML = currentDate.toLocaleDateString();
 
 addItem.addEventListener("click", () => {
   let newRow = document.createElement("tr");
+  newRow.classList.add("items");
   newRow.innerHTML = `<td>
                 <input type="text" placeholder="Item Name" />
                 <input type="text" placeholder="Item Description" />
@@ -64,8 +65,8 @@ function updateTotal() {
   let taxRate = document.getElementById("tax-percent");
   let discountRate = document.getElementById("discount-percent");
   let currency = document.getElementById("currency");
-  let rows = document.getElementsByTagName("tr");
-  for (let i = 1; i < rows.length; i++) {
+  let rows = document.getElementsByClassName("items");
+  for (let i = 0; i < rows.length; i++) {
     let itemRow = rows[i];
     let quantityRow = itemRow.getElementsByClassName("quantity")[0];
     let quantity = parseInt(quantityRow.value);
@@ -117,8 +118,59 @@ currentDisRate.addEventListener("input", () => {
 });
 
 /*Review*/
+function preview() {
+  const date = document.getElementById("due-date");
+  const inNum = document.getElementById("invoice-number");
+  const toname = document.getElementById("to-name");
+  const toemail = document.getElementById("to-email");
+  const toaddress = document.getElementById("to-address");
+  const fname = document.getElementById("f-name");
+  const femail = document.getElementById("f-email");
+  const faddress = document.getElementById("f-address");
+  const tAmount = document.getElementById("total");
 
+  const billto = document.getElementById("billto");
+  billto.innerText = fname.value;
+
+  const invoiceNumber = document.getElementById("invoice-no");
+  invoiceNumber.innerText = inNum.value;
+
+  const amount = document.getElementById("amount");
+  amount.innerText = tAmount.innerText;
+}
+
+const bd = document.getElementsByTagName("body")[0];
+const mn = document.getElementById("main");
 let rbtn = document.getElementById("review");
 rbtn.addEventListener("click", () => {
-  console.log("clicked");
+  mn.style.filter = "blur(2px)";
+  const pop = document.getElementById("popup");
+  pop.style.display = "block";
+  preview();
 });
+
+bd.addEventListener("click", (e) => {
+  if (
+    e.target.id == "bd" ||
+    e.target.id == "right" ||
+    e.target.id == "invoice" ||
+    e.target.id == "bottom"
+  ) {
+    const pop = document.getElementById("popup");
+    pop.style.display = "none";
+    mn.style.filter = "blur(0px)";
+  }
+});
+
+/*download pdf
+
+let invoice = document.getElementById("invoice");
+  var opt = {
+    margin: 1,
+    filename: "invoice.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+  };
+  html2pdf(invoice, opt);
+*/

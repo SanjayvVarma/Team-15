@@ -8,16 +8,17 @@
       src="https://kit.fontawesome.com/b0de7f475e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.js"></script>
     <title>Generate Invoice</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <div class="main">
-      <section class="left">
+  <body id="bd">
+    <div class="main" id="main">
+      <section class="left" id="invoice">
         <div class="top">
           <div class="date">
             <span>Current date:</span> <span id="current-date"></span><br />
-            <span>Due date:</span> <input type="date" />
+            <span>Due date:</span> <input id="due-date" type="date" />
           </div>
           <div class="invoice-number">
             <label for="invoice-number"><span>Invoice Number:</span></label>
@@ -28,17 +29,31 @@
         <div class="top1">
           <div>
             <span id="bill-from"> Bill to </span>
-            <input type="text" placeholder="Who is this invoice to" /><input
+            <input
+              type="text"
+              id="to-name"
+              placeholder="Who is this invoice to"
+            /><input
               type="email"
               placeholder="Email Address"
-            /><input type="text" placeholder="Billing Address" />
+              id="to-email"
+            /><input
+              type="text"
+              placeholder="Billing Address"
+              id="to-address"
+            />
           </div>
           <div>
             <span id="bill-to"> Bill from </span>
-            <input type="text" placeholder="Who is this invoice from" /><input
+            <input
+              type="text"
+              placeholder="Who is this invoice from"
+              id="f-name"
+            /><input
               type="email"
               placeholder="Email Address"
-            /><input type="text" placeholder="Billing Address" />
+              id="f-email"
+            /><input type="text" placeholder="Billing Address" id="f-address" />
           </div>
         </div>
         <hr />
@@ -50,7 +65,7 @@
               <th>PRICE/RATE</th>
               <th>ACTION</th>
             </tr>
-            <tr>
+            <tr class="items">
               <td>
                 <input type="text" placeholder="Item Name" />
                 <input type="text" placeholder="Item Description" />
@@ -64,7 +79,7 @@
           </table>
           <button id="add-item" type="button">Add Item</button>
         </div>
-        <div class="bottom">
+        <div class="bottom" id="bottom">
           <div><span>Subtotal:</span> <span id="subtotal">$0</span></div>
           <div>
             <span>Discount:</span
@@ -91,7 +106,7 @@
           ></textarea>
         </div>
       </section>
-      <section class="right">
+      <section class="right" id="right">
         <button id="review">Review Invoice</button>
         <div class="currency">
           <span>Currency</span>
@@ -129,6 +144,53 @@
           </div>
         </div>
       </section>
+    </div>
+    <div id="popup">
+      <div id="top">
+        <div class="name">
+          <h1 id="billto">Rahul</h1>
+          <p>invoice #: <span id="invoice-no"></span></p>
+        </div>
+        <div>
+          <h2>Amount Due:</h2>
+          <p id="amount"></p>
+        </div>
+      </div>
+      <div id="main-container">
+        <div id="bill-details">
+          <div id="plain-1">
+            Bill To:
+            <p id="bt-name"></p>
+            <p id="bt-address"></p>
+            <p id="bt-email"></p>
+          </div>
+          <div id="plain-2">
+            Bill From
+            <p id="bf-name"></p>
+            <p id="bf-address"></p>
+            <p id="bf-email"></p>
+          </div>
+          <div id="plain-3">
+            Date of Issue
+            <p id="date"></p>
+          </div>
+        </div>
+        <table id="detail-table">
+          <tr>
+            <th>QTY</th>
+            <th>DESCRIPTION</th>
+            <th>PRICE</th>
+            <th>AMOUNT</th>
+          </tr>
+        </table>
+        <div class="bottom">
+          <div><span>SUBTOTAL:</span> <span id="subtotal">0</span></div>
+          <div>
+            <span>TOTAL:</span>
+            <span id="total">0</span>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>

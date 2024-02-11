@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .main {
@@ -91,6 +92,59 @@ h1 {
 .invoice-number {
     display: inline-block;
 }
+
+
+
+/*pop*/
+
+#popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 71%;
+    height: 70dvh;
+    background-color: aquamarine;
+}
+
+#top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#main-container {
+    padding: 50px;
+}
+
+#bill-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 
 
 /*mediaQuery*/
