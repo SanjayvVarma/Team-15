@@ -136,42 +136,103 @@ descriptionInput.addEventListener("input" , () => {
 
 // button events
 
-const employementBtn = document.getElementById("addEmployement");
-const addEmployementSection = document.getElementById("Employement-details");
+const employementBtn = document.getElementById("addEmployement"); 
+const addEmployementSection = document.getElementById("Employement-details"); 
+const experience = document.getElementById("experienceList"); 
+const experience2 = document.getElementById("experienceList2");
 
-// right side appending
-const experience = document.getElementById("experienceList");
-
-employementBtn.addEventListener("click" , () => {
+employementBtn.addEventListener("click", () => {
+    
     let div1 = document.createElement("div");
-    div1.innerHTML = `<p>Start Date</p><input type="month" id="startDateInput"><p>End Date</p><input type="month" id="endDateInput"><input type="text" id="jobTitleInput" placeholder="Job Title"><input type="text" id="employerInput" placeholder="Employer"><textarea name="" id="employementDescription" placeholder="Description"></textarea>`
+    div1.innerHTML = `<p>Start Date</p><input type="month" id="startDateInput"><p>End Date</p><input type="month" id="endDateInput"><input type="text" id="jobTitleInput" placeholder="Job Title"><input type="text" id="employerInput" placeholder="Employer"><textarea id="JobdescriptionInput" placeholder="Description"></textarea>`
     div1.classList.add("btnDiv");
-    addEmployementSection.append(div1);
-    
+    addEmployementSection.appendChild(div1);
+
+  
     let rightDiv1 = document.createElement("li");
-    rightDiv1.innerHTML = `<div id="employementInfo"><div id="topInfo"><div id="jobTitleInfo"></div><div id="duration"><span id="JobStartDate"></span> to <span id="JobEndDate"></span></div></div><div id="bottomInfo"><div id="employerInfo"></div><div id="jobDescriptionInfo"></div></div></div>`
-    experience.append(rightDiv1);
-    
-})
+    rightDiv1.innerHTML = `
+        <div id="employementInfo">
+            <div id="topInfo">
+                <div id="jobTitleInfo"></div>
+                <div id="duration">
+                    <span id="JobStartDate"></span> to <span id="JobEndDate"></span>
+                </div>
+            </div>
+            <div id="bottomInfo">
+                <div id="employerInfo"></div>
+                <div id="jobDescriptionInfo"></div>
+            </div>
+        </div>`;
+    let rightDiv2 = document.createElement("li");
+    rightDiv2.innerHTML = `
+            <div id="MiniemployementInfo">
+                <div id="MinitopInfo">
+                    <div id="MinijobTitleInfo"></div>
+                    <div id="Miniduration">
+                        <span id="MiniJobStartDate"></span> to <span id="MiniJobEndDate"></span>
+                    </div>
+                </div>
+                <div id="MinibottomInfo">
+                    <div id="MiniemployerInfo"></div>
+                    <div id="MinijobDescriptionInfo"></div>
+                </div>
+            </div>`;
+    experience.appendChild(rightDiv1);
+    experience2.appendChild(rightDiv2);
 
-let startDateInput = rightDiv1.getElementById("startDateInput");
-// let endDateInput = document.getElementById("endDateInput");
-// let jobTitleInput = document.getElementById("jobTitleInput");
-// let employerInput = document.getElementById("employerInput");
-// let employementDescription = document.getElementById("employementDescription");
+    const startDateInput = div1.querySelector("#startDateInput");
+    const endDateInput = div1.querySelector("#endDateInput");
+    const jobTitleInput = div1.querySelector("#jobTitleInput");
+    const employerInput = div1.querySelector("#employerInput");
+    const descriptionInput = div1.querySelector("#JobdescriptionInput");
+
+// two column 
+    const JobStartDate = rightDiv1.querySelector("#JobStartDate");
+    const JobEndDate = rightDiv1.querySelector("#JobEndDate");
+    const jobTitleInfo = rightDiv1.querySelector("#jobTitleInfo");
+    const employerInfo = rightDiv1.querySelector("#employerInfo");
+    const jobDescriptionInfo = rightDiv1.querySelector("#jobDescriptionInfo");
+    JobStartDate.style.fontWeight = "bold";
+    JobEndDate.style.fontWeight = "bold";
+    jobTitleInfo.style.fontWeight = "bold";
+// minimalistic
+    const JobStartDate2 = rightDiv2.querySelector("#MiniJobStartDate");
+    const JobEndDate2 = rightDiv2.querySelector("#MiniJobEndDate");
+    const jobTitleInfo2 = rightDiv2.querySelector("#MinijobTitleInfo");
+    const employerInfo2 = rightDiv2.querySelector("#MiniemployerInfo");
+    const jobDescriptionInfo2 = rightDiv2.querySelector("#MinijobDescriptionInfo");
+    JobStartDate2.style.fontWeight = "bold";
+    JobEndDate2.style.fontWeight = "bold";
+    jobTitleInfo2.style.fontWeight = "bold";
 
 
-startDateInput.innerText = "april-2002";
+    startDateInput.addEventListener("input" , () => {
+        JobStartDate.innerText = startDateInput.value;
+        JobStartDate2.innerText = startDateInput.value;
+    });
 
-// startDateInput.addEventListener("input" , () => {
-//     document.getElementById("JobStartDate").innerText = startDateInput.value;
-// })
-// endDateInput.addEventListener("input" , () => {
-//     document.getElementById("JobEndDate").innerText = endDateInput.value;
-// })
-// jobTitleInput.addEventListener("input" , () => {
+    endDateInput.addEventListener("input" , () => {
+        JobEndDate.innerText = endDateInput.value;
+        JobEndDate2.innerText = endDateInput.value;
+    });
 
-// })
+    jobTitleInput.addEventListener("input", () => {
+        jobTitleInfo.innerText = jobTitleInput.value;
+        jobTitleInfo2.innerText = jobTitleInput.value;
+    });
+
+    employerInput.addEventListener("input", () => {
+        employerInfo.innerText = employerInput.value;
+        employerInfo2.innerText = employerInput.value;
+    });
+
+    descriptionInput.addEventListener("input", () => {
+        jobDescriptionInfo.innerText = descriptionInput.value;
+        jobDescriptionInfo2.innerText = descriptionInput.value;
+    });
+});
+
+
 
 
 const projectBtn = document.getElementById("addProject");
