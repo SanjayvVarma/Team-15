@@ -8,17 +8,17 @@
       src="https://kit.fontawesome.com/b0de7f475e.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.js"></script>
     <title>Generate Invoice</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body id="bd">
-    <div class="main" id="main">
+    <form action="#" class="main" id="main" onsubmit="reviewIn()">
       <section class="left" id="invoice">
         <div class="top">
           <div class="date">
-            <span>Current date:</span> <span id="current-date"></span><br />
-            <span>Due date:</span> <input id="due-date" type="date" />
+            <span>Current date:</span>
+            <span id="current-date" class="normal"></span><br />
+            <span>Due date:</span> <input id="due-date" type="date" required />
           </div>
           <div class="invoice-number">
             <label for="invoice-number"><span>Invoice Number:</span></label>
@@ -33,14 +33,17 @@
               type="text"
               id="to-name"
               placeholder="Who is this invoice to"
+              required
             /><input
               type="email"
               placeholder="Email Address"
               id="to-email"
+              required
             /><input
               type="text"
               placeholder="Billing Address"
               id="to-address"
+              required
             />
           </div>
           <div>
@@ -49,14 +52,20 @@
               type="text"
               placeholder="Who is this invoice from"
               id="f-name"
+              required
             /><input
               type="email"
               placeholder="Email Address"
               id="f-email"
-            /><input type="text" placeholder="Billing Address" id="f-address" />
+              required
+            /><input
+              type="text"
+              placeholder="Billing Address"
+              id="f-address"
+              required
+            />
           </div>
         </div>
-        <hr />
         <div class="middle">
           <table id="detail-table">
             <tr>
@@ -67,11 +76,21 @@
             </tr>
             <tr class="items">
               <td>
-                <input type="text" placeholder="Item Name" />
-                <input type="text" placeholder="Item Description" />
+                <input
+                  type="text"
+                  placeholder="Item Name"
+                  class="item-name"
+                  required
+                />
+                <input
+                  type="text"
+                  placeholder="Item Description"
+                  class="item-desc"
+                  required
+                />
               </td>
               <td><input type="number" value="1" class="quantity" /></td>
-              <td><input type="number" value="1.0" class="price" /></td>
+              <td><input type="number" value="1" class="price" /></td>
               <td>
                 <i class="fa-solid fa-trash-can delete-btn"></i>
               </td>
@@ -91,7 +110,7 @@
             ><span class="normal">(<span id="tx-per">0</span>%)</span>
             <span id="tax">$0</span>
           </div>
-          <hr />
+
           <div>
             <span>Total:</span>
             <span id="total"></span>
@@ -107,7 +126,7 @@
         </div>
       </section>
       <section class="right" id="right">
-        <button id="review">Review Invoice</button>
+        <button type="submit" id="review">Review Invoice</button>
         <div class="currency">
           <span>Currency</span>
           <select id="currency">
@@ -144,54 +163,65 @@
           </div>
         </div>
       </section>
-    </div>
+    </form>
     <div id="popup">
-      <div id="top">
-        <div class="name">
-          <h1 id="billto">Rahul</h1>
-          <p>invoice #: <span id="invoice-no"></span></p>
-        </div>
-        <div>
-          <h2>Amount Due:</h2>
-          <p id="amount"></p>
-        </div>
-      </div>
-      <div id="main-container">
-        <div id="bill-details">
-          <div id="plain-1">
-            Bill To:
-            <p id="bt-name"></p>
-            <p id="bt-address"></p>
-            <p id="bt-email"></p>
+      <div id="pop-container">
+        <div id="top">
+          <div class="name">
+            <h1 id="billto">Rahul</h1>
+            <p>invoice #: <span id="invoice-no"></span></p>
           </div>
-          <div id="plain-2">
-            Bill From
-            <p id="bf-name"></p>
-            <p id="bf-address"></p>
-            <p id="bf-email"></p>
-          </div>
-          <div id="plain-3">
-            Date of Issue
-            <p id="date"></p>
-          </div>
-        </div>
-        <table id="detail-table">
-          <tr>
-            <th>QTY</th>
-            <th>DESCRIPTION</th>
-            <th>PRICE</th>
-            <th>AMOUNT</th>
-          </tr>
-        </table>
-        <div class="bottom">
-          <div><span>SUBTOTAL:</span> <span id="subtotal">0</span></div>
           <div>
-            <span>TOTAL:</span>
-            <span id="total">0</span>
+            <h2>Amount Due:</h2>
+            <p id="amount"></p>
+          </div>
+        </div>
+        <div id="main-container">
+          <div id="bill-details">
+            <div id="plain-1">
+              <span class="pop-h">Bill To:</span>
+              <p id="bt-name"></p>
+              <p id="bt-address"></p>
+              <p id="bt-email"></p>
+            </div>
+            <div id="plain-2">
+              <span class="pop-h">Bill From:</span>
+              <p id="bf-name"></p>
+              <p id="bf-address"></p>
+              <p id="bf-email"></p>
+            </div>
+            <div id="plain-3">
+              <span class="pop-h">Date of Issue:</span>
+              <p id="date"></p>
+            </div>
+          </div>
+          <div class="pop-item-head">
+            <span>QTY</span><span>DESCRIPTION</span><span>PRICE</span
+            ><span>AMOUNT</span>
+          </div>
+          <table id="pop-detail-table"></table>
+          <div class="bottom">
+            <div><span>SUBTOTAL:</span> <span id="pop-subtotal">0</span></div>
+            <div>
+              <span>TOTAL:</span>
+              <span id="pop-total">0</span>
+            </div>
           </div>
         </div>
       </div>
+      <div class="popBottom">
+        <button type="button" onclick="sendInvoice()">Send Invoice</button>
+        <button id="download" type="button">Download</button>
+      </div>
+
+      <span id="send-invoice-msg"></span>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="main.js"></script>
   </body>
 </html>

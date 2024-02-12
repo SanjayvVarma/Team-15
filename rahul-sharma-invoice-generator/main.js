@@ -9,8 +9,8 @@ addItem.addEventListener("click", () => {
   let newRow = document.createElement("tr");
   newRow.classList.add("items");
   newRow.innerHTML = `<td>
-                <input type="text" placeholder="Item Name" />
-                <input type="text" placeholder="Item Description" />
+                <input type="text" placeholder="Item Name"  class="item-name"/>
+                <input type="text" placeholder="Item Description" class="item-desc" />
                 </td>
               <td><input type="number" class="quantity" value="1" /></td>
               <td><input type="number" class="price" value="1.0" /></td>
@@ -137,24 +137,83 @@ function preview() {
 
   const amount = document.getElementById("amount");
   amount.innerText = tAmount.innerText;
+
+  const bto = document.getElementById("bt-name");
+  bto.innerHTML = toname.value;
+
+  const bta = document.getElementById("bt-address");
+  bta.innerHTML = toaddress.value;
+
+  const bte = document.getElementById("bt-email");
+  bte.innerHTML = toemail.value;
+
+  const bfr = document.getElementById("bf-name");
+  bfr.innerHTML = fname.value;
+
+  const bfa = document.getElementById("bf-address");
+  bfa.innerHTML = faddress.value;
+
+  const bfe = document.getElementById("bf-email");
+  bfe.innerHTML = femail.value;
+
+  const issueDate = document.getElementById("date");
+  issueDate.innerHTML = date.value;
+
+  const popcontainer = document.getElementById("pop-detail-table");
+  popcontainer.innerHTML = "";
+  const tr = document.getElementsByClassName("items");
+  for (let i = 0; i < tr.length; i++) {
+    let itemName = tr[i].getElementsByClassName("item-name")[0];
+    let itemDesc = tr[i].getElementsByClassName("item-desc")[0];
+    let qty = tr[i].getElementsByClassName("quantity")[0];
+    let price = tr[i].getElementsByClassName("price")[0];
+    let row = document.createElement("tr");
+    let td1 = document.createElement("td");
+    let td2 = document.createElement("td");
+    let td3 = document.createElement("td");
+    let td4 = document.createElement("td");
+    td1.append(qty.value);
+    td2.innerText = itemDesc.value;
+    td3.innerText = price.value;
+    td4.innerHTML = Number(qty.value) * Number(price.value);
+    row.append(td1, td2, td3, td4);
+    popcontainer.append(row);
+  }
+
+  const subtotal = document.getElementById("subtotal");
+  const sub = document.getElementById("pop-subtotal");
+  sub.innerText = subtotal.innerText;
+
+  const total = document.getElementById("total");
+  const tot = document.getElementById("pop-total");
+  tot.innerText = total.innerText;
 }
 
 const bd = document.getElementsByTagName("body")[0];
 const mn = document.getElementById("main");
-let rbtn = document.getElementById("review");
-rbtn.addEventListener("click", () => {
+/* let rbtn = document.getElementById("review");
+rbtn.addEventListener("click", (e) => {
+  mn.style.filter = "blur(2px)";
+  const pop = document.getElementById("popup");
+  pop.style.display = "block";
+  rbtn.disabled = true;
+  preview();
+  id="review"
+}); */
+
+function reviewIn() {
   mn.style.filter = "blur(2px)";
   const pop = document.getElementById("popup");
   pop.style.display = "block";
   preview();
-});
+}
 
 bd.addEventListener("click", (e) => {
   if (
     e.target.id == "bd" ||
     e.target.id == "right" ||
     e.target.id == "invoice" ||
-    e.target.id == "bottom"
+    e.target.id == "Button"
   ) {
     const pop = document.getElementById("popup");
     pop.style.display = "none";
@@ -162,15 +221,32 @@ bd.addEventListener("click", (e) => {
   }
 });
 
-/*download pdf
+/*download pdf*/
 
-let invoice = document.getElementById("invoice");
+const download = document.getElementById("download");
+download.addEventListener("click", () => {
+  setTimeout(downloadInvoice, 1000);
+});
+
+function downloadInvoice() {
+  let invoice = document.getElementById("pop-container");
   var opt = {
-    margin: 1,
-    filename: "invoice.pdf",
+    margin: 0,
+    filename: "Newinvoice.pdf",
     image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { scale: 2 },
+    html2canvas: { scale: 1 },
     jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
   };
-  html2pdf(invoice, opt);
-*/
+  html2pdf().set(opt).from(invoice).save();
+}
+
+/*send Invoice*/
+
+function sendInvoice() {
+  let msg = document.getElementById("send-invoice-msg");
+  msg.innerText = "Sending...";
+
+  setTimeout(() => {
+    msg.innerText = "Invoice sent successfully.";
+  }, 2000);
+}
