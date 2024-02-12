@@ -409,12 +409,12 @@ input{
     margin: 0;
 } */
 
-#experience, #experience2{
+#experience, #experience2, #projectContainer, #educationCont{
     width: 100%;
     padding: 0 20px;
     margin-bottom: 10px;
 }
-#employementInfo, #MiniemployementInfo{
+#employementInfo, #MiniemployementInfo, #projectInfo, #MiniprojectInfo, #educationInfo, #MinieducationInfo{
     display: flex;
     flex-direction: column;
     font-size: 14px;
@@ -454,6 +454,6 @@ input{
     font-size: 14px;
     font-weight: bold;
 }
-#JobdescriptionInput{
+#JobdescriptionInput, #projectDescriptionInput, #educationDescription{
     width: 100%;
 }
