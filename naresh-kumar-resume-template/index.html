@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./icons8-resume-64.png">
+</head>
+<body>
+    <div class="mainHeader">
+        <div class="icon"><img class="resumeIcon" src="./icons8-resume-64.png" alt=""><h1>Resume Generator</h1></div>
+        <button class="downloadBtn"><img class="downloadIcon" src="./icons8-download-64.png" alt="">Download PDF</button>
+    </div>
+    <div class="main">
+        <div class="leftContainer">
+            <div id="types">
+                <h1>Template types</h1>
+                <select name="TemplateTypes" id="select">
+                    <option value="Two-columns">Two-columns</option>
+                    <option value="Minimalistic">Minimalistic</option>
+                </select>
+            </div>
+            <div id="headerColor">
+                <h1>Header Color</h1>
+                <input type="color" value="#7F1C1E" name="" id="headerColorInput">
+            </div>
+            <div id="headerTextColor">
+                <h1>Header-Text Color</h1>
+                <input type="color" value="#FFFFFF" id="headerTextColorInput">
+            </div>
+            <div id="personalDetails">
+                <h1>Personal Details</h1>
+                <input type="text" name="" id="nameInput" placeholder="Name" >
+                <input type="email" name="" id="emailInput" placeholder="E-mail ID" >
+                <input type="tel" maxlength="10" name="" id="phoneInput" placeholder="Phone">
+                <input type="text" name="" id="addressInput" placeholder="City, Country">
+            </div>
+            <div id="professionalDetails">
+                <h1>Professional Details</h1>
+                <input type="text" id="jobRoleInput" placeholder="Wanted job title">
+                <textarea name="" id="descriptionInput" placeholder="Professional Summary"></textarea>
+                <input type="text" id="skillsInput" placeholder="Skills">
+            </div>
+            <div id="employementbtn">
+                <button id="addEmployement">Add Employement</button>
+                <div id="Employement-details">
+                </div>
+            </div>
+            <div id="projectBtn">
+                <button id="addProject">Add Project</button>
+                <div id="projectDetails"></div>
+            </div>
+            <div id="educationContainer">
+                <h1>Educational Background</h1>
+                <div id="educationBtn">
+                    <button id="addEducation">Add Education</button>
+                    <div id="educationalDetails"></div>
+                </div>
+            </div>
+        </div>
+        <div class="rightContainer">
+            <div id="twoColumnTemplate">
+                <div id="header">
+                    <div id="info">
+                        <div id="name"></div>
+                        <div id="jobRole"></div>
+                    </div>
+                </div>
+                <div id="resumeContent">
+                    <div id="aside">
+                        <div id="skillsSection">
+                            <h4>SKILLS</h4>
+                            <hr>
+                            <br>
+                            <div id="skillsOutput"></div>
+                        </div>
+                        <div id="contactSection">
+                            <h4>CONTACT</h4>
+                            <hr>
+                            <br>
+                            <div id="contactInfo">
+                                <div id="contactImg"><img src="./call_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+                                <div id="phone"></div>
+                            </div>
+                            <div id="contactInfo">
+                                <div id="contactImg"><img src="./mail_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+                                <div id="mail"></div>
+                            </div>
+                            <div id="contactInfo">
+                                <div id="contactImg"><img src="./location_on_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+                                <div id="location"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="mainContainer">
+                        <div id="summarySection">
+                            <h4>SUMMARY</h4>
+                            <hr>
+                            <br>
+                            <p id="summaryPara"></p>
+                        </div>
+                        
+                        <div id="professionalExperienceSection">
+                            <h4>PROFESSIONAL EXPERIENCE</h4>
+                            <hr>
+                            <br>
+                            <div id="experience">
+                                <ul id="experienceList">
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="projectsSection">
+                            <h4>PROJECTS</h4>
+                            <hr>
+                            <br>
+                            <div id="projectContainer"></div>
+                        </div>
+                        <div id="educationSection">
+                            <h4>EDUCATION</h4>
+                            <hr>
+                            <br>
+                            <div id="educationContainer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="minimalisticTemplate">
+                <div id="header2">
+                    <div id="info2">
+                        <div id="nameMinimalistic"></div>
+                        <div id="jobRoleMinimalistic"></div>
+                    </div>
+                    <div id="contactSection2">
+                        <div id="contactInfo2">
+                            <div id="contactImg"><img src="./call_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+                            <div id="phoneMinimalistic"></div>
+                        </div>
+                        <div id="contactInfo2">
+                            <div id="contactImg"><img src="./mail_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+                            <div id="mailMinimalistic"></div>
+                        </div>
+                        <div id="contactInfo2">
+                            <div id="contactImg"><img src="./location_on_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+                            <div id="locationMinimalistic"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="resumeContent2">
+                    <div id="summarySection2">
+                        <h4>SUMMARY</h4>
+                        <hr>
+                        <br>
+                        <p id="summaryPara2"></p>
+                    </div>
+                    <div id="skillsSection2">
+                        <h4>SKILLS</h4>
+                        <hr>
+                        <br>
+                        <div id="skillsOutput2"></div>
+                    </div>
+                    <div id="professionalExperienceSection2">
+                        <h4>PROFESSIONAL EXPERIENCE</h4>
+                        <hr>
+                        <br>
+                    </div>
+                    <div id="projectsSection2">
+                        <h4>PROJECTS</h4>
+                        <hr>
+                        <br>
+                    </div>
+                    <div id="educationSection2">
+                        <h4>EDUCATION</h4>
+                        <hr>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>

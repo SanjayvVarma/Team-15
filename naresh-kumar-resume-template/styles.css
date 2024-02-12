@@ -1,0 +1,456 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=Caveat:wght@400;500;600;700&family=Dosis:wght@200;300;400;500;600;700;800&family=Fjalla+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Oswald:wght@200;300;400;500;600;700&family=Poor+Story&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Tektur:wght@400;500;600;700;800;900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F4F6;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+}
+
+.mainHeader{
+    width: 100%;
+    height: 60px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    box-shadow: 5px 0 10px rgb(204, 204, 204);
+}
+.icon{
+    width: 50%;
+    display: flex;
+    font-size: 1rem;
+    text-align: center;
+    gap: 10px;
+}
+.resumeIcon{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    object-position: center;
+}
+.downloadBtn{
+    width: 150px;
+    background-color: #25bb20;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.5s;
+    font-weight: 700;
+}
+.downloadBtn:hover{
+    transform: scale(0.98);
+}
+.downloadIcon{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.main{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    /* gap: 20px; */
+    margin-top: 60px;
+}
+.leftContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 40%;
+    /* overflow-y: scroll; */
+    padding: 10px;
+    /* border: 1px solid #127c0e; */
+}
+/* .leftContainer::-webkit-scrollbar-track{
+    
+} */
+.rightContainer{
+    width: 50%;
+    height: auto;
+    /* border: 1px solid #127c0e; */
+    box-shadow: -5px 5px 15px rgb(172, 172, 172),
+    5px -5px 15px rgb(172, 172, 172);
+    margin: 10px;
+    background-color: #F3F4F6;
+    /* padding: 5px; */
+}
+#types{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#select{
+    height: 30px;
+    border: rgb(14, 14, 233);
+    font-size: 14px;
+    border-radius: 5px;
+    width: 70%;
+    padding: 0 5px;
+}
+.leftContainer  h1{
+    font-size: 16px;
+    font-weight: 700;
+}
+#headerColor{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#headerColorInput{
+    width: 13%;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+#headerTextColor{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#headerTextColorInput{
+    width: 13%;
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+#personalDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#personalDetails input{
+    height: 30px;
+    border: rgb(14, 14, 233);
+    font-size: 14px;
+    border-radius: 5px;
+    width: 70%;
+    padding: 0 10px;
+}
+#professionalDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#professionalDetails input{
+    height: 30px;
+    border: rgb(14, 14, 233);
+    font-size: 14px;
+    border-radius: 5px;
+    width: 70%;
+    padding: 0 10px;
+}
+textarea{
+    border: rgb(14, 14, 233);
+    font-size: 14px;
+    border-radius: 5px;
+    width: 70%;
+    padding: 5px 10px;
+    height: 100px;
+    font-family: 'Nunito', sans-serif;
+}
+#employementbtn, #projectBtn{
+    width: 70%;;
+}
+#employementbtn button{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #127c0e;
+    color: white;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif ;
+    transition: all 0.2s;
+}
+#addEmployement:hover{
+    transform: scale(1.01);
+}
+#projectBtn button{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #127c0e;
+    color: white;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif ;
+    transition: all 0.2s;
+}
+#addProject:hover{
+    transform: scale(1.01);
+}
+#educationContainer{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#educationBtn{
+    width: 100%;
+    margin-top: 2px;
+}
+#addEducation{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #127c0e;
+    color: white;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif ;
+    transition: all 0.2s;
+}
+#addEducation:hover{
+    transform: scale(1.01);
+}
+#twoColumnTemplate {
+    /* display: none; */
+}
+#header{
+    width: 100%;
+    height: 150px;
+    /* background-color: #25bb20; */
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#resumeContent{
+    display: flex;
+    /* flex-direction: row; */
+    height: auto;
+}
+#aside{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: #d4d4d4;
+    border: none;
+    height: 100vw;
+    padding: 10px;
+    gap: 20px;
+    /* position: relative; */
+}
+hr{
+    height: 3px;
+    background: black;
+}
+#skillsSection{
+    height: 200px;
+}
+#contactInfo{
+    padding: 0 5px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+    /* text-wrap: wrap; */
+    word-wrap: break-word;
+}
+#contactImg{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+#mail, #phone, #location , #mailMinimalistic , #phoneMinimalistic, #locationMinimalistic{
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    text-wrap: wrap;
+    height: auto;
+    align-items: center;
+    word-break: break-all;
+    font-weight: 700;
+}
+h4{
+    font-size: 1rem;
+}
+#mainContainer{
+    width: 70%;
+    padding: 10px;
+}
+#minimalisticTemplate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+#header2{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    /* background-color: #4e4e4e; */
+}
+#resumeContent2{
+    width: 97%;
+    height: 100vh;
+    padding: 10px;
+    margin: 10px;
+    /* background-color: white; */
+}
+#contactSection2{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#contactInfo2{
+    padding: 0 5px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10px;
+    text-wrap: wrap;
+    overflow-wrap: break-word;
+    /* text-wrap: wrap; */
+    word-wrap: break-word;
+}
+#info, #info2{
+    width: 68%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-transform: uppercase;
+}
+#info{
+    width: 100%;
+    text-align: center;
+}
+#name , #nameMinimalistic{
+    font-size: 2rem;
+    word-break: break-all;
+    width: 100%;
+    font-weight: 700;
+}
+#jobRole , #jobRoleMinimalistic{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#summaryPara, #summaryPara2{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    width: 100%;
+    /* word-break: break-all; */
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 10px;
+    text-wrap: wrap;
+}
+
+/* #Employement-details{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+} */
+input{
+    height: 30px;
+    border: rgb(14, 14, 233);
+    font-size: 14px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0 10px;
+    font-family: 'Nunito', sans-serif;
+}
+#employementDescription, #projectDescription{
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+.btnDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+/* #headerColorInput, #headerTextColorInput{
+    width: 15%;
+    margin: 0;
+} */
+
+#experience{
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+#employementInfo{
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+#topInfo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+#bottomInfo{
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    flex-direction: column;
+}
+#skillsOutput, #skillsOutput2{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+#skillsOutput span{
+    background-color: rgba(65, 65, 65, 0.562);
+    color: rgb(0, 0, 0);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
+#skillsOutput2{
+    margin-bottom: 10px;
+}
+#skillsOutput2 span{
+    background-color: rgba(65, 65, 65, 0.562);
+    color: rgb(0, 0, 0);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+}
