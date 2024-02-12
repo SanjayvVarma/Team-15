@@ -6,11 +6,12 @@
     <title>Resume Generator</title>
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./icons8-resume-64.png">
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 </head>
 <body>
     <div class="mainHeader">
         <div class="icon"><img class="resumeIcon" src="./icons8-resume-64.png" alt=""><h1>Resume Generator</h1></div>
-        <button class="downloadBtn"><img class="downloadIcon" src="./icons8-download-64.png" alt="">Download PDF</button>
+        <button onclick="generatePDF()" class="downloadBtn" id="downloadPdf"><img class="downloadIcon" src="./icons8-download-64.png" alt="">Download PDF</button>
     </div>
     <div class="main">
         <div class="leftContainer">
@@ -59,7 +60,7 @@
                 </div>
             </div>
         </div>
-        <div class="rightContainer">
+        <div class="rightContainer" id="pdf">
             <div id="twoColumnTemplate">
                 <div id="header">
                     <div id="info">

@@ -416,3 +416,45 @@ educationBtn.addEventListener("click" , () => {
     });
 })
 
+// downloadBtn
+
+// const downloadBtn = document.getElementById("downloadPdf");
+
+function generatePDF(){
+   if(selectTemplate.value === "Two-columns"){
+    const element = document.getElementById("twoColumnTemplate");
+    html2pdf(element, {
+        margin: 10,
+        filename: "resume.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      });
+   }else if(selectTemplate.value === "Minimalistic"){
+    const element = document.getElementById("minimalisticTemplate");
+    html2pdf(element, {
+        margin: 10,
+        filename: "resume.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      });
+   }
+    
+}
+
+// var doc = new jsPDF();
+// var specialElementHandlers = {
+//     '#editor': function (element, renderer) {
+//         return true;
+//     }
+// };
+ 
+ 
+// $('#downloadPdf').click(function () {
+//     doc.fromHTML($('#htmlContent').html(), 15, 15, {
+//         'width': 700,
+//         'elementHandlers': specialElementHandlers
+//     });
+//     doc.save('sample_file.pdf');
+// });

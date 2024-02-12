@@ -55,10 +55,10 @@ body{
     color: white;
     cursor: pointer;
     border-radius: 5px;
-    transition: all 0.5s;
+    transition: all 0.2s;
     font-weight: 700;
 }
-.downloadBtn:hover{
+.downloadBtn:active{
     transform: scale(0.98);
 }
 .downloadIcon{
@@ -229,9 +229,6 @@ textarea{
 #addEducation:hover{
     transform: scale(1.01);
 }
-#twoColumnTemplate {
-    /* display: none; */
-}
 #header{
     width: 100%;
     height: 150px;
@@ -253,7 +250,7 @@ textarea{
     flex-direction: column;
     background-color: #d4d4d4;
     border: none;
-    height: 100vw;
+    /* height: 100vw; */
     padding: 10px;
     gap: 20px;
     /* position: relative; */
