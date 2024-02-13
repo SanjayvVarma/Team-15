@@ -212,8 +212,7 @@ bd.addEventListener("click", (e) => {
   if (
     e.target.id == "bd" ||
     e.target.id == "right" ||
-    e.target.id == "invoice" ||
-    e.target.id == "Button"
+    e.target.id == "invoice"
   ) {
     const pop = document.getElementById("popup");
     pop.style.display = "none";
