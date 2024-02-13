@@ -454,3 +454,453 @@ input{
 #JobdescriptionInput, #projectDescriptionInput, #educationDescription{
     width: 100%;
 }
+
+@media screen and (max-width: 900px) {
+    .mainHeader{
+        gap: 10px;
+        justify-content: space-evenly;
+    }
+    .icon{
+        width:50%;
+        display: flex;
+        font-size: 10px;
+        text-align: center;
+        gap: 3px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .icon h1{
+        font-size: 13px;
+        width: 100%;
+    }
+    .resumeIcon{
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        object-position: center;
+    }
+    .downloadBtn{
+        width: 100px;
+        background-color: #25bb20;
+        border: none;
+        font-size: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.2s;
+        font-weight: 700;
+    }
+    .downloadBtn:active{
+        transform: scale(0.98);
+    }
+    .downloadIcon{
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+    }
+    .main{
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        display: flex;
+        /* gap: 20px; */
+        margin-top: 60px;
+        flex-direction: column-reverse;
+    }
+    .leftContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        /* overflow-y: scroll; */
+        padding: 10px;
+        /* border: 1px solid #127c0e; */
+    }
+    /* .leftContainer::-webkit-scrollbar-track{
+        
+    } */
+    .rightContainer{
+        width: 94%;
+        height: auto;
+        /* border: 1px solid #127c0e; */
+        box-shadow: -5px 5px 15px rgb(172, 172, 172),
+        5px -5px 15px rgb(172, 172, 172);
+        /* margin: 10px; */
+        background-color: #F3F4F6;
+        /* padding: 5px; */
+    }
+    #types{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    #select{
+        height: 30px;
+        border: rgb(14, 14, 233);
+        font-size: 14px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 0 5px;
+    }
+    .leftContainer  h1{
+        font-size: 14px;
+        font-weight: 700;
+    }
+    #headerColor{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    #headerColorInput{
+        width: 20%;
+        border: none;
+        background: transparent;
+        padding: 0;
+    }
+    #headerTextColor{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    #headerTextColorInput{
+        width: 20%;
+        border: none;
+        background: transparent;
+        padding: 0;
+    }
+    #personalDetails{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    #personalDetails input{
+        height: 30px;
+        border: rgb(14, 14, 233);
+        font-size: 14px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 0 10px;
+    }
+    #professionalDetails{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    #professionalDetails input{
+        height: 30px;
+        border: rgb(14, 14, 233);
+        font-size: 14px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 0 10px;
+    }
+    textarea{
+        border: rgb(14, 14, 233);
+        font-size: 14px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 5px 10px;
+        height: 100px;
+        font-family: 'Nunito', sans-serif;
+    }
+    #employementbtn, #projectBtn{
+        width: 100%;;
+    }
+    #employementbtn button{
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: #127c0e;
+        color: white;
+        font-size: 14px;
+        font-family: 'Nunito', sans-serif ;
+        transition: all 0.2s;
+    }
+    #addEmployement:hover{
+        transform: scale(1.01);
+    }
+    #projectBtn button{
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: #127c0e;
+        color: white;
+        font-size: 14px;
+        font-family: 'Nunito', sans-serif ;
+        transition: all 0.2s;
+    }
+    #addProject:hover{
+        transform: scale(1.01);
+    }
+    #educationContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    #educationBtn{
+        width: 100%;
+        margin-top: 2px;
+    }
+    #addEducation{
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        background-color: #127c0e;
+        color: white;
+        font-size: 14px;
+        font-family: 'Nunito', sans-serif ;
+        transition: all 0.2s;
+    }
+    #addEducation:hover{
+        transform: scale(1.01);
+    }
+    #header{
+        width: 100%;
+        height: 100px;
+        /* background-color: #25bb20; */
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #resumeContent{
+        display: flex;
+        /* flex-direction: row; */
+        height: auto;
+    }
+    #aside{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        background-color: #d4d4d4;
+        border: none;
+        /* height: 100vw; */
+        padding: 10px;
+        gap: 20px;
+        /* position: relative; */
+    }
+    hr{
+        height: 3px;
+        background: black;
+    }
+    #skillsSection{
+        height: 100px;
+    }
+    #contactInfo{
+        padding: 0;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 2px;
+        text-wrap: wrap;
+        overflow-wrap: break-word;
+        /* text-wrap: wrap; */
+        word-wrap: break-word;
+    }
+    #contactImg img{
+        width: 15px;
+        height: 15px;
+        object-fit: contain;
+    }
+    #mail, #phone, #location , #mailMinimalistic , #phoneMinimalistic, #locationMinimalistic{
+        font-size: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+        text-wrap: wrap;
+        height: auto;
+        align-items: center;
+        word-break: break-all;
+        font-weight: 700;
+    }
+    h4{
+        font-size: 10px;
+    }
+    #mainContainer{
+        width: 100%;
+        padding: 10px;
+    }
+    #minimalisticTemplate{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        display: none;
+    }
+    #header2{
+        display: flex;
+        width: 100%;
+        height: 100px;
+        /* background-color: #4e4e4e; */
+    }
+    #resumeContent2{
+        width: 97%;
+        height: 100vh;
+        padding: 10px;
+        margin: 10px;
+        /* background-color: white; */
+    }
+    #contactSection2{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #contactInfo2{
+        padding: 0 3px;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        flex-direction: row-reverse;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 3px;
+        text-wrap: wrap;
+        overflow-wrap: break-word;
+        /* text-wrap: wrap; */
+        word-wrap: break-word;
+    }
+    #info, #info2{
+        width: 70%;
+        height: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-transform: uppercase;
+    }
+    #info{
+        width: 100%;
+        text-align: center;
+    }
+    #name , #nameMinimalistic{
+        font-size: 13px;
+        word-break: break-all;
+        width: 100%;
+        font-weight: bolder;
+    }
+    #jobRole , #jobRoleMinimalistic{
+        font-size: 9px;
+        font-weight: 600;
+    }
+    
+    #summaryPara, #summaryPara2{
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+        width: 100%;
+        /* word-break: break-all; */
+        font-size: 9px;
+        font-weight: 600;
+        padding: 0 10px;
+        text-wrap: wrap;
+    }
+    
+    /* #Employement-details{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    } */
+    input{
+        height: 30px;
+        border: rgb(14, 14, 233);
+        font-size: 14px;
+        border-radius: 5px;
+        width: 100%;
+        padding: 0 10px;
+        font-family: 'Nunito', sans-serif;
+    }
+    #employementDescription, #projectDescription{
+        width: 100%;
+        font-family: 'Nunito', sans-serif;
+    }
+    .btnDiv{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    /* #headerColorInput, #headerTextColorInput{
+        width: 15%;
+        margin: 0;
+    } */
+    
+    #experience, #experience2, #projectContainer, #educationCont{
+        width: 100%;
+        padding: 0 20px;
+        margin-bottom: 10px;
+    }
+    #employementInfo, #MiniemployementInfo, #projectInfo, #MiniprojectInfo, #educationInfo, #MinieducationInfo{
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+    }
+    #topInfo, #MinitopInfo{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 10px;
+    }
+    #bottomInfo,#MinibottomInfo{
+        display: flex;
+        width: 100%;
+        padding-left: 10px;
+        flex-direction: column;
+        font-size: 9px;
+    }
+    #skillsOutput, #skillsOutput2{
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+    #skillsOutput span{
+        background-color: rgba(65, 65, 65, 0.562);
+        color: rgb(0, 0, 0);
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 9px;
+        font-weight: bold;
+    }
+    #skillsOutput2{
+        margin-bottom: 10px;
+    }
+    #skillsOutput2 span{
+        background-color: rgba(65, 65, 65, 0.562);
+        color: rgb(0, 0, 0);
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-size: 9px;
+        font-weight: bold;
+    }
+    #JobdescriptionInput, #projectDescriptionInput, #educationDescription{
+        width: 100%;
+    }
+    #MiniJobStartDate, #JonStartDate{
+        font-size: 10px;
+    }
+    #topInfo, #MinitopInfo{
+        
+    }
+    #employerInfo, #MiniemployerInfo{
+        
+    }
+}
