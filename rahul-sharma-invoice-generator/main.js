@@ -191,8 +191,10 @@ function preview() {
 
 const bd = document.getElementsByTagName("body")[0];
 const mn = document.getElementById("main");
-
+const rbtn = document.getElementById("review");
+let count = 1;
 function reviewIn() {
+  rbtn.disabled = true;
   mn.style.filter = "blur(2px)";
   const pop = document.getElementById("popup");
   pop.style.display = "block";
@@ -203,11 +205,13 @@ bd.addEventListener("click", (e) => {
   if (
     e.target.id == "bd" ||
     e.target.id == "right" ||
-    e.target.id == "invoice"
+    e.target.id == "invoice" ||
+    e.target.id != "review"
   ) {
     const pop = document.getElementById("popup");
     pop.style.display = "none";
     mn.style.filter = "blur(0px)";
+    rbtn.disabled = false;
   }
 });
 
