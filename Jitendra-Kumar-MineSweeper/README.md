@@ -8,7 +8,7 @@ This is a project that demonstrates MineSweeper Game using CSS, HTML, and JavaSc
 
 # Demo
 
-
+https://jitendrakumar2208.github.io/minesweeper/
 
 # Features
 
