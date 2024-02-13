@@ -1,6 +1,6 @@
 # Youtube Bookmarker Chrome extension 
 
-Visit the [GitHub repository](https://github.com/SanjayvVarma/Youtube-Video-bookmark-chrome-extension)
+Visit the [GitHub repository](https://github.com/SanjayvVarma/Team-15/tree/main/Sanjay-chrome-extension)
 
 Youtube Bookmark is a chrome extension that enhances the experience of watching Youtube videos by allowing users to create and manage bookmarks with specific timestamps in youtube videos.
 
@@ -26,7 +26,7 @@ Youtube Bookmark is a chrome extension that enhances the experience of watching 
 ## Installation
 
 1. Fork and then clone this repository:
-git clone https://github.com/SanjayvVarma/Youtube-Video-bookmark-chrome-extension .
+git clone https://github.com/SanjayvVarma/Team-15/tree/main/Sanjay-chrome-extension .
 2. Open Google Chrome.
 3. Go to chrome://extensions/.
 4. Enable "Developer mode" in the top-right corner.
