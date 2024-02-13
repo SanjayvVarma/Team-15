@@ -11,7 +11,7 @@ This is a project that demonstrates payment integration using CSS, HTML, and Jav
 
 # Demo
 
-https://pruthviraj3196.github.io/Payment-Integration/
+[Click Here](https://pruthviraj3196.github.io/Payment-Integration/)
 
 # Features
 
