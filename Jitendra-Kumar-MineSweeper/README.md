@@ -1,4 +1,5 @@
-# MineSweeper Game ProjectThis is a project that demonstrates MineSweeper Game using CSS, HTML, and JavaScript. It provides a simple interface for users to play game
+# MineSweeper Game Project
+This is a project that demonstrates MineSweeper Game using CSS, HTML, and JavaScript. It provides a simple interface for users to play game
 
 # Table of Contents
 - Demo
