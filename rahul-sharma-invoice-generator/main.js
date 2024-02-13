@@ -13,7 +13,7 @@ addItem.addEventListener("click", () => {
                 <input type="text" placeholder="Item Description" class="item-desc" />
                 </td>
               <td><input type="number" class="quantity" value="1" /></td>
-              <td><input type="number" class="price" value="1.0" /></td>
+              <td><input type="number" class="price" value="1" /></td>
               <td>
                 <i  class="fa-solid fa-trash-can delete-btn"></i>
               </td>`;
@@ -191,15 +191,6 @@ function preview() {
 
 const bd = document.getElementsByTagName("body")[0];
 const mn = document.getElementById("main");
-/* let rbtn = document.getElementById("review");
-rbtn.addEventListener("click", (e) => {
-  mn.style.filter = "blur(2px)";
-  const pop = document.getElementById("popup");
-  pop.style.display = "block";
-  rbtn.disabled = true;
-  preview();
-  id="review"
-}); */
 
 function reviewIn() {
   mn.style.filter = "blur(2px)";
