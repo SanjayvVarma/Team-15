@@ -23,7 +23,7 @@ The Resume Generator is a web application that allows users to dynamically chang
 
 1. Clone the repository to your local machine:
 
-git clone https://github.com/your-username/resume-generator.git
+git clone [here](https://github.com/nareshkumarnandam/resume.git)
 
 2. Open the index.html file in a web browser.
 
