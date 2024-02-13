@@ -15,11 +15,11 @@ https://pruthviraj3196.github.io/Payment-Integration/
 
 # Features
 
-1 - Integration with popular payment gateways.
-2 - Simple and intuitive user interface.
-3 - Responsive design for seamless experience across devices.
-4 - Customizable styles with CSS.
-5 - Secure payment processing using JavaScript.
+- Integration with popular payment gateways.
+- Simple and intuitive user interface.
+- Responsive design for seamless experience across devices.
+- Customizable styles with CSS.
+- Secure payment processing using JavaScript.
 
 # Technologies Used
 
@@ -29,9 +29,9 @@ https://pruthviraj3196.github.io/Payment-Integration/
 
 #Usage 
 
-1 - Choose the payment gateway you want to use.
-2 - Fill in the required payment details.
-3 - Click on the "Pay Now" button to proceed with the payment.
+- Choose the payment gateway you want to use.
+- Fill in the required payment details.
+- Click on the "Pay Now" button to proceed with the payment.
 
 #Contributing
 
