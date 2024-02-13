@@ -13,7 +13,7 @@ addItem.addEventListener("click", () => {
                 <input type="text" placeholder="Item Description" class="item-desc" />
                 </td>
               <td><input type="number" class="quantity" value="1" /></td>
-              <td><input type="number" class="price" value="1" /></td>
+              <td><input type="text" class="price" value="1" /></td>
               <td>
                 <i  class="fa-solid fa-trash-can delete-btn"></i>
               </td>`;
