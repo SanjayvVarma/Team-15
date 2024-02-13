@@ -1,0 +1,380 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: #333;
+    padding: 10px;
+}
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+}
+.navbar a:hover {
+    color: #ccc;
+}
+.charity-image {
+    height: 100vh;
+    background-image: url('https://wildlifesos.org/wp-content/uploads/2020/06/environmental-protection-326923_1920-1920x900.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+.donation-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.donation-option {
+    flex-basis: 30%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+.donation-option:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+.donation-option h2 {
+    color: #555;
+}
+.donation-option img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* css for card popup */
+
+
+
+*{
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.maincontainer{
+    width: 100%;
+    /* height: 40vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    /* text-transform: uppercase; */
+    margin-top: 45px;
+}
+
+
+.container{
+    text-transform: uppercase;
+    /* min-height: 100vh; */
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    top: 200px;
+    /* padding-bottom: 60px; */
+    position: absolute;
+    transform: translate(-1%, -80%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    box-shadow: 0px 0px 20px  grey;
+    
+}
+
+.openpopup{
+    visibility: visible;
+    top: 100%;
+    transform: translate(-1%, -90%) scale(0.7);
+    padding: 10px;
+}
+
+.paymentsucess{
+    visibility: hidden;
+}
+
+.displaysuss{
+    visibility: visible;
+}
+
+
+.Done{
+    padding: 14px;
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 200px;
+    background-color: rgb(103,214,66);
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+
+}
+
+.Done:hover {
+    background-color: rgb(44,182,43);
+}
+
+.container form{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0,0,0,.1);
+    padding: 20px;
+    width: 600px;
+    padding-top: 160px;
+}
+
+.container form .inputBox{
+    margin-top: 20px;
+}
+
+.container form .inputBox span{
+    display: block;
+    color:#999;
+    padding-bottom: 5px;
+}
+
+.container form .inputBox input,
+.container form .inputBox select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid rgba(0,0,0,.3);
+    color:#444;
+}
+
+.container form .flexbox{
+    display: flex;
+    gap:15px;
+}
+
+.container form .flexbox .inputBox{
+    flex:1 1 150px;
+}
+
+.container form .submit-btn{
+    width: 100%;
+    background:linear-gradient(45deg, blueviolet, deeppink);
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    color:#fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.container form .submit-btn:hover{
+    letter-spacing: 2px;
+    opacity: .8;
+}
+
+.container .card-container{
+    margin-bottom: -150px;
+    position: relative;
+    height: 250px;
+    width: 400px;
+}
+
+.container .card-container .front{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0; left: 0;
+    background:linear-gradient(45deg, blueviolet, deeppink);
+    border-radius: 5px;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,.2);
+    padding:20px;
+    transform:perspective(1000px) rotateY(0deg);
+    transition:transform .4s ease-out;
+}
+
+.container .card-container .front .image{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.container .card-container .front .image img{
+    height: 50px;
+}
+
+.container .card-container .front .card-number-box{
+    padding:30px 0;
+    font-size: 22px;
+    color:#fff;
+}
+
+.container .card-container .front .flexbox{
+    display: flex;
+}
+
+.container .card-container .front .flexbox .box:nth-child(1){
+    margin-right: auto;
+}
+
+.container .card-container .front .flexbox .box{
+    font-size: 15px;
+    color:#fff;
+}
+
+.container .card-container .back{
+    position: absolute;
+    top:0; left: 0;
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(45deg, blueviolet, deeppink);
+    border-radius: 5px;
+    padding: 20px 0;
+    text-align: right;
+    backface-visibility: hidden;
+    box-shadow: 0 15px 25px rgba(0,0,0,.2);
+    transform:perspective(1000px) rotateY(180deg);
+    transition:transform .4s ease-out;
+}
+
+.container .card-container .back .stripe{
+    background: #000;
+    width: 100%;
+    margin: 10px 0;
+    height: 50px;
+}
+
+.container .card-container .back .box{
+    padding: 0 20px;
+}
+
+.container .card-container .back .box span{
+    color:#fff;
+    font-size: 15px;
+}
+
+.container .card-container .back .box .cvv-box{
+    height: 50px;
+    padding: 10px;
+    margin-top: 5px;
+    color:#333;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.container .card-container .back .box img{
+    margin-top: 30px;
+    height: 30px;
+}
+
+
+/* ghgjhg */
+
+
+.gpay{
+    width: 30%;
+}
+
+.phonepay{
+    width: 20%;
+}
+
+.paypal{
+    width: 40%;
+    margin-left: 15px;
+}
+#payment-form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.proced {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.proced:hover {
+    background-color: #45a049;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    text-align: center;
+}
+
+#countdown {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* sign in */
+button{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #45a049;
+    cursor: pointer;
+}
+
+/* popup UPI */
+
+.upiPay{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#popopenupi{
+    width: 400px;
+    position: absolute;
+    background-color: white;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-3%, -62%) scale(1);
+    text-align: center;
+    transition: transform 0.4s , top 0.4s;
+    padding: 10px;
+}
+.hidden{
+    display: none
+}
+/* .openupiPop{
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+} */
